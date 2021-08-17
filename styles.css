@@ -28,44 +28,18 @@ body {
   padding-bottom: 5px;
 }
 
-.pfp {
-  font-size: 50px !important;
+.create {
+  font-size: 40px !important;
+  color: white;
 }
 
 .pfp-button {
-  border: none;
+  border: solid;
+  text-decoration: none;
   background: transparent;
   color: white;
   cursor: pointer;
-}
-
-.pfp-dropdown {
-  /* display: none; */
-  position: absolute;
-  margin-top: 62px;
-  background-color: white;
-  width: 100px;
-  margin-right: 18px;
-  border-radius: 20%;
-}
-
-.pfp-menu-options {
-  color: black;
-  list-style-type: none;
-  margin: 0;
-  padding: 0;
-  font-size: 14px;
-  text-align: center;
-  display: none;
-}
-
-.pfp-menu-options :hover {
-  display: block;
-}
-
-.pfp-menu-options li {
-  margin-top: 10px;
-  margin-bottom: 10px;
+  border-radius: 10%;
 }
 
 .pfp-button .pfp-dropdown {
@@ -151,7 +125,7 @@ body {
   border-style: none;
   color: white;
   font-family: 'Fredoka One', cursive;
-  border-radius: 35%;
+  border-radius: 15%;
   font-size: 18px;
   cursor: pointer;
 }
@@ -163,7 +137,7 @@ body {
   border-style: none;
   color: white;
   font-family: 'Fredoka One', cursive;
-  border-radius: 35%;
+  border-radius: 15%;
   font-size: 18px;
   cursor: pointer;
 }
@@ -179,18 +153,6 @@ footer {
   color: white;
   clear: both;
   position: relative;
+  margin-top: 35px;
 }
 
-.forms {
-  display: flex;
-  flex-direction: row;
-  justify-content: space-evenly;
-}
-
-.toggle-content{
-  display: none;
-}
-
-.toggle-content.is-visible {
-  display: block;
-}

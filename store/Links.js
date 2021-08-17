@@ -1,1 +1,4 @@
-export default [{ title: "Home", text: "Home" }];
+export default [
+  { title: "Home", text: "Home" },
+  { title: "Create", text: "Create" }
+];
