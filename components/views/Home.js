@@ -71,8 +71,8 @@ export default () => html`
       </div>
     </div>
     <div class="page-btns">
-      <button class="page-back-btn" type="button"><</button>
-      <button class="page-fwd-btn" type="button">></button>
+      <button class="pink-button" type="button"><</button>
+      <button class="pink-button" type="button">></button>
     </div>
   </main>
 `;
