@@ -202,3 +202,8 @@ footer {
 #dream-post-button {
   margin-top: 20px;
 }
+
+.dream-post-content {
+  background: right/contain content-box border-box no-repeat
+      url('/assests/testing.jpg');
+}
