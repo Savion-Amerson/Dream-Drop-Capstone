@@ -1,9 +1,47 @@
-const { response } = require("express");
 const express = require("express");
-const { request } = require("http");
-
-//impost ^^^^
 const app = express();
+const mongoose = require("mongoose");
+const dotenv = require("dotenv");
+const dreams = require("./routes/dreams");
+
+dotenv.config();
+
+mongoose.connect(process.env.MONGODB);
+const db = mongoose.connection;
+
+db.on("error", console.error.bind(console, "Connection error:"));
+db.once(
+  "open",
+  console.log.bind(console, "Successfully opened connection to Mongo!")
+);
+
+// Define middleware functions
+const logging = (request, response, next) => {
+  console.log(`${request.method} ${request.url} ${Date.now()}`);
+  next();
+};
+
+// CORS Middleware
+const cors = (req, res, next) => {
+  res.setHeader(
+    "Access-Control-Allow-Headers",
+    "X-Requested-With,content-type, Accept,Authorization,Origin"
+  );
+  res.setHeader("Access-Control-Allow-Origin", "*");
+  res.setHeader(
+    "Access-Control-Allow-Methods",
+    "GET, POST, OPTIONS, PUT, PATCH, DELETE"
+  );
+  res.setHeader("Access-Control-Allow-Credentials", true);
+  next();
+};
+
+// Using the middleware functions
+app.use(cors);
+app.use(express.json());
+app.use(logging);
+
+app.use(dreams);
 
 //configuring Express instance
 
@@ -28,10 +66,6 @@ app
     );
   });
 
-app.route("/greet/:name").get((request, response) => {
-  const name = request.params.name;
-  response.status("418").json({ message: `Hello ${name}` });
-});
-
 //Executing the Express (This must be last)
-app.listen(4040, () => console.log("Listening on port 4040"));
+const port = process.env.PORT || 4040;
+app.listen(port, () => console.log(`Listening on port ${port}`));

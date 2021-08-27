@@ -151,6 +151,12 @@ footer {
 
 .post-page {
   display: flex;
+  flex-direction: row;
+}
+
+.checks-and-post-button {
+  margin: 20px;
+  color: white;
 }
 
 .dream-title,
@@ -175,18 +181,6 @@ footer {
   margin: 20px;
 }
 
-.img-upload {
-  background-color: white;
-  color: darkgray;
-  width: 500px;
-  height: 70%;
-  text-align: center;
-  border-radius: 5%;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-}
-
 #upload-icon {
   font-size: 150px;
   margin-top: 25%;
@@ -203,7 +197,14 @@ footer {
   margin-top: 20px;
 }
 
-.dream-post-content {
-  background: right/contain content-box border-box no-repeat
-      url('/assests/testing.jpg');
+.dream-post-body, .dream-post-title {
+  color: white;
+  margin: 20px;
+}
+
+.comment-section {
+  background-color: white;
+  margin: 20px;
+  margin-top: 40px;
+  padding: 10px;
 }
