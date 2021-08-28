@@ -20,6 +20,32 @@ function render(st = state.Home) {
     ${Footer()}
     `;
   router.updatePageLinks();
+
+  addEventListeners(st);
+}
+
+function addEventListeners(st) {
+  if (st.view === "Create") {
+    document.querySelector("form").addEventListener("submit", event => {
+      event.preventDefault();
+      const inputList = event.target.elements;
+
+      const requestData = {
+        title: inputList.dreamtitle.value,
+        content: inputList.dreamcontent.value
+      };
+
+      axios
+        .post(`${process.env.API}/dreams`, requestData)
+        .then(response => {
+          state.Dream.dreams.push(response.data);
+          router.navigate("/");
+        })
+        .catch(error => {
+          console.log("It puked", error);
+        });
+    });
+  }
 }
 
 // render(state.Home);

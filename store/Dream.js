@@ -1,4 +1,5 @@
 export default {
   header: "Dream",
-  view: "Dream"
+  view: "Dream",
+  dreams: []
 };
