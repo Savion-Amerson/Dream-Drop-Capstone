@@ -33,6 +33,7 @@ function addEventListeners(st) {
       const requestData = {
         title: inputList.dreamtitle.value,
         content: inputList.dreamcontent.value
+        // comments: inputList.dreamcomment.value
       };
 
       axios
@@ -56,11 +57,12 @@ function addEventListeners(st) {
       for (let i = dreamBlockAmt; i > 0; i--) {
         document.querySelector(
           "#mainhomecontent"
-        ).innerHTML += `<a href="/Dream/${response.data[i]._id}"><div class="dream-card" id="dreamcard">
+        ).innerHTML += `<a href="/Dream/${
+          response.data[i]._id
+        }"><div class="dream-card" id="dreamcard">
           <h1 id="dreamtitle">${response.data[i].title}</h1>
-             <p class="dreamdataid">${response.data[i]._id}</P>
          <div class="dream-preview" id="dreampreview">
-          ${response.data[i].content}
+          <p>${response.data[i].content.slice(0, 240)}</p>
          </div>
       </div></a>`;
       }
@@ -90,4 +92,30 @@ function addEventListeners(st) {
         console.log("It puked", error);
       });
   }
+
+  // if (st.view === "dream") {
+  //   document
+  //     .querySelector("#commentsubmit")
+  //     .addEventListener("submit", event => {
+  //       event.preventDefault();
+  //       const inputList = event.target.elements;
+
+  //       const requestData = {
+  //         comments: inputList.value
+  //         // comments: inputList.dreamcomment.value
+  //       };
+
+  //       axios
+  //         .post(
+  //           `${process.env.API}/${window.sessionStorage.getItem("current")}`,
+  //           requestData
+  //         )
+  //         .then(response => {
+  //           state.Dream.dreams.push(response.data.comments);
+  //         })
+  //         .catch(error => {
+  //           console.log("It puked", error);
+  //         });
+  //     });
+  // }
 }

@@ -2,7 +2,7 @@ import html from "html-literal";
 
 export default () => html`
   <nav class="navbar">
-    <a href="/"><h1 class="logo">DREAM DROP</h1></a>
+    <a href="/"><img class="logo" src="https://i.imgur.com/y0b602R.png"/></a>
     <div class="nav-buttons">
       <button class="pfp-button">
         <a href="/create">

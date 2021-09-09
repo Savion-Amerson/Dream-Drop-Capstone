@@ -11,6 +11,9 @@ export default () => html`
           <label for="content"></label>
           <textarea placeholder="Type here..." class="dream-content" id="dreamcontent"></textarea>
 
+          <!-- <label for="content"></label>
+          <textarea placeholder="Type here..." class="dream-comment" id="dreamcomment"></textarea> -->
+
           <div class="checks-and-post-button">
           <input type="checkbox" id="tos-agreement">
 
@@ -18,7 +21,7 @@ export default () => html`
           <input type="checkbox" id="nsfw-warning">
 
           <label> MY DREAM CONTAINS ADULT CONTENT</label><br />
-          <button type="submit" class="pink-button" name="submit" id="dream-post-button">POST</button>
+          <button type="submit" class="pink-button" name="submit" id="dream-post-button">DROP!</button>
           </div>
 
         </form>

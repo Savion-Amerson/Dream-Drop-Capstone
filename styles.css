@@ -27,10 +27,15 @@ body {
 .logo {
   color: white;
   padding-bottom: 5px;
+  width: 230px;
 }
 
 a {
   text-decoration: none;
+}
+
+h3{
+  font-weight: normal;
 }
 
 .create {
@@ -99,12 +104,17 @@ a {
   border-color: black;
   margin: 25px;
   border-radius: 5%;
+
 }
 
-
+.dream-preview p{
+  font-size: 15px;
+}
 
 .dream-card h1 {
   padding-left: 5px;
+  text-decoration: none;
+  color: black;
 }
 
 .dream-preview {
@@ -202,9 +212,11 @@ footer {
   margin-top: 20px;
 }
 
-.dream-post-body, .dream-post-title {
-  color: white;
+.dream-post-body {
+  background-color: white;
   margin: 20px;
+  padding: 5px;
+  border-radius: 10px;
 }
 
 .comment-section {
@@ -212,4 +224,36 @@ footer {
   margin: 20px;
   margin-top: 40px;
   padding: 10px;
+}
+
+.comment-section {
+  width: 1000px;
+  border-radius: 10px;
+}
+
+.dream-comment{
+  width: 800px;
+  height: 50px;
+}
+
+#commentsubmit{
+  margin-bottom: 20px;
+}
+
+.comment {
+  border: black;
+  border-style: solid;
+  padding-left: 10px;
+  border-radius: 10px;
+}
+
+.pfp-img{
+  width: 80px;
+  height: 55px;
+  border-radius: 10%;
+}
+
+.commentprof{
+  display: flex;
+  justify-content: space-around;
 }
